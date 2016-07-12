@@ -1,0 +1,34 @@
+form.main-form(action="echo", method="post")
+	.main-form__title-container
+		img(src="img/case.png", width="221", heigth="118", alt="Дело")
+	.main-form__personal-info
+		label(for="full-name") Полное ФИО
+		input(type="text", name="full-name", id="full-name", value="Куцев Сергей Игоревич", placeholder="Иванов Иван Иванович", required)
+		label(for="birthday") Год рождения
+		input(type="text", name="birthday", id="birthday", value="1987", placeholder="1990", required)
+		label(for="location") Место жительства
+		input(type="text", name="location", id="location", value="г.Днепропетровск, Украина", placeholder="г. Иваново, Россия", required)
+		label(for="skype") Скайп
+		input(type="text", name="skype", id="skype", value="flaumsk", placeholder="ivanov", required)
+		label(for="e-mail") Почта
+		input(type="e-mail", name="e-mail", id="e-mail", value="skflaum@gmail.com", placeholder="ivanov@gmail.com", required)
+	.main-form__education
+		span.main-form__education-text
+			| Выпускник
+			a(href="http://htmlacademy.ru") htmlacademy.ru
+		input(type="radio", name="education", id="education-yes", checked)
+		label(for="education-yes") Да
+		input(type="radio", name="education", id="education-no")
+		label(for="education-no") Нет
+	.main-form__practical-skils
+		h2.main-form__practical-skils-title Практические навыки
+		p.main-form__practical-skils-text 
+			| Отметьте тольео те технологии и типы задач, с которыми вы хорошо знакомы. Отсутствие опыта отнюдь не означает, что у
+			| вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыму гарантировано
+			| будете справлятся.
+		.main-form__practical-skils-items
+			input(type="checkbox", name="bem-methodology", id="bem-methodology", checked)
+			label.main-form__practical-skils-item(for="bem-methodology") Методология БЭМ
+			input(type="checkbox", name="jquery", id="jquery")
+			label.main-form__practical-skils-item(for="jquery") jQuery
+				
