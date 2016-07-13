@@ -84,18 +84,17 @@ form.main-form(action="echo", method="post")
 		span.main-form__js-title Уровень владения JavaScript
 		.main-form__js-scale-wrapper
 			input(type="radio", name="js", id="no-js")
+			label.main-form__js-level.main-form__js-level--no(for="no-js") Не владею
 			input(type="radio", name="js", id="low-js", checked)
+			label.main-form__js-level.main-form__js-level--low(for="low-js") Использую готовые решения
 			input(type="radio", name="js", id="mid-js")
-			input(type="radio", name="js", id="high-js")
-			.main-form__js-toggle
-			label.main-form__js-level(for="no-js") Не владею
-			label.main-form__js-level(for="low-js") Использую готовые решения
-			label.main-form__js-level(for="mid-js") 
+			label.main-form__js-level.main-form__js-level--mid(for="mid-js") 
 				span Использую готовые решения и умею их переделывать 
-			label.main-form__js-level(for="high-js") Пишу сложные скрипты
+			input(type="radio", name="js", id="high-js")
+			label.main-form__js-level.main-form__js-level--high(for="high-js") Пишу сложные скрипты
 					
 	//- Блок даты заполнения
 	
 	.main-form__date
-		span.main-form__date-title Дата заполнения
+		span.main-form__date-text Дата заполeнения
 		input(type="text", name="date", value="13.07.2014", placeholder="01.01.2014")

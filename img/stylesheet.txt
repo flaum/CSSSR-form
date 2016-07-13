@@ -1,0 +1,35 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-icon-checkbox {
+    width: 19px;
+    height: 18px;
+    background-position: -5px -5px;
+}
+
+.sprite-icon-checkbox-on {
+    width: 21px;
+    height: 27px;
+    background-position: -5px -33px;
+}
+
+.sprite-icon-radiobtn {
+    width: 41px;
+    height: 45px;
+    background-position: -5px -70px;
+}
+
+.sprite-icon-radiobtn-point {
+    width: 23px;
+    height: 27px;
+    background-position: -5px -125px;
+}
+
+.sprite-icon-toggle {
+    width: 17px;
+    height: 14px;
+    background-position: -5px -162px;
+}
