@@ -1,0 +1,196 @@
+.main-form
+	container column
+
+	padding-right: 121px
+	padding-left: 109px
+
+.main-form__title-container
+	display: flex
+	justify-content: center
+
+	padding-right: 33px
+	padding-bottom: 31px
+
+	img
+		width: 221px
+		height: 118px
+
+.main-form__personal-info
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	flex-wrap: wrap
+	align-items: flex-start;
+
+	padding-top: 20px
+
+	label
+		padding-top: 8px
+		padding-right: 16px
+		padding-bottom: 4px
+
+	input
+		input-text 1 69%
+
+.main-form__personal-info .main-form__personal-info-skype
+	flex-basis: 85%
+
+.main-form__education
+	display: flex
+	flex-direction: row
+	align-items: flex-start;
+
+	padding-top: 18px
+
+	input
+		display: none
+
+	label
+		position: relative
+
+		padding-top: 2px
+		padding-left: 33px
+		margin-right: 22px
+
+		cursor: pointer
+
+		&::before
+			content: ""
+
+			position: absolute
+			top: 14px
+			left: 0
+
+			display: flex
+			width: 27px
+			height: 28px
+
+			background: url("../img/icon-radiobtn.png") no-repeat 50% 50%
+			background-size: 41px 45px
+
+		&::after
+			content: ""
+
+			position: absolute
+			top: 17px
+			left: 0
+
+			display: none
+			width: 27px
+			height: 28px
+
+			background: url("../img/icon-radiobtn-point.png") no-repeat 50% 50%
+			background-size: 23px 27px
+
+	input:checked + label
+
+		&::after
+			display: flex;
+
+
+.main-form__education-text
+	padding-right: 6px
+
+.main-form__htmlacademy-link
+	padding-top: 1px
+	margin-right: 32px
+
+	color: link-color
+
+.main-form__practical-skils
+	display: flex
+	flex-direction: column
+
+	padding-top: 19px
+
+.main-form__practical-skils-title
+	// padding-bottom: 20px
+
+.main-form__practical-skils-text
+	position: relative
+
+	margin: 0
+	margin-top: -3px
+	padding-left: 18px
+	padding-bottom: 8px
+
+	font-size: 14px
+	font-weight: normal
+	line-height: 22px
+
+	color: taup
+
+	&::before
+		content: "*"
+
+		position: absolute
+		top: 10px
+		left: -1px
+
+		display: flex
+
+		font-size: 36px
+
+		width: 15px
+		height: 36px
+
+.main-form__practical-skils-items
+	display: flex
+	flex-direction: column
+	flex-wrap: wrap
+	align-items: flex-start;
+
+	height: 260px
+	padding-top: 13px
+
+	input
+		display: none
+
+	input:checked + label
+
+		&::after
+			display: flex;
+
+.main-form__practical-skils-item
+	position: relative
+
+	width: 33.5%
+	padding-bottom: 10px
+	padding-left: 28px
+
+	font-size: 21px
+	line-height: 25px
+
+	&:nth-child(9n)
+		box-sizing: content-box;
+		width: 32.5%
+
+	&::before
+		content: ""
+
+		position: absolute
+		top: 3px
+		left: 1px
+
+		display: flex
+
+		width: 19px
+		height: 18px
+
+		background: url(../img/icon-checkbox.png) no-repeat 0 0
+		background-size: 19px 18px
+
+	&::after
+		content: ""
+
+		position: absolute
+		top: -8px
+		left: 5px
+
+		display: none
+
+		width: 21px
+		height: 27px
+
+		background: url(../img/icon-checkbox-on.png) no-repeat 0 0
+		background-size: 21px 27px

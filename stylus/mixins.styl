@@ -1,0 +1,35 @@
+container(direction)
+	display: flex
+	flex-direction: direction
+
+	width: container-width
+	margin: 0 auto
+
+	background: golden-krayola url("../img/bg-pattern.jpg") repeat 50% 50%
+
+input-text(grow, width)
+	display: flex
+	flex-grow: grow
+	flex-basis: width
+
+	padding-bottom: 15px
+	padding-left: 11px
+
+	font-family: "Courier New", Courier, monospace
+	font-size: 30px
+	font-weight: normal
+	line-height: 36px
+
+	background: transparent url(../img/input-border.png) repeat-x 0 110%
+	border: none
+	outline: none
+
+visualy-hidden()
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	padding: 0
+	border: 0
+	clip: rect(0 0 0 0)
+	overflow: hidden

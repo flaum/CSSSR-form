@@ -3,7 +3,7 @@
 var gulp = require("gulp");
 var rename = require("gulp-rename");
 var plumber = require("gulp-plumber");
-var less = require("gulp-less");
+var stylus = require("gulp-stylus");
 var minify = require("gulp-csso");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
@@ -37,9 +37,9 @@ gulp.task("html", function() {
 })
 
 gulp.task("style", function() {
-  gulp.src("less/style.less")
+  gulp.src("stylus/style.styl")
     .pipe(plumber())
-    .pipe(less())
+    .pipe(stylus())
     .pipe(postcss([
       autoprefixer({browsers: [
         "last 1 version",
@@ -54,13 +54,13 @@ gulp.task("style", function() {
     ]))
     .pipe(gulp.dest("css"))
     .pipe(minify())
-    .pipe(rename("style.css"))
+    .pipe(rename("style.min.css"))
     .pipe(gulp.dest("css"))
     .pipe(server.reload({stream: true}));
 });
 
 gulp.task("images", function() {
-  return gulp.src("build/img/**/*.{png,jpg,gif}")
+  return gulp.src("dist/img/**/*.{png,jpg,gif}")
   .pipe(imagemin([
     imagemin.optipng({
       optimizationLevel: 3
@@ -69,17 +69,17 @@ gulp.task("images", function() {
       progressive: true
     })
   ]))
-  .pipe(gulp.dest("build/img"));
+  .pipe(gulp.dest("dist/img"));
 });
 
 gulp.task("symbols", function() {
-  return gulp.src("build/img/icons/*.svg")
+  return gulp.src("dist/img/icons/*.svg")
   	.pipe(svgmin())
     .pipe(svgstore({
       inlineSvg: true
     }))
     .pipe(rename("symbols.svg"))
-    .pipe(gulp.dest("build/img"));
+    .pipe(gulp.dest("dist/img"));
 });
 
 gulp.task("serve", function() {
@@ -90,7 +90,7 @@ gulp.task("serve", function() {
 		ui: false
 	});
 
-  gulp.watch("less/**/*.less", ["style"]);
+  gulp.watch("stylus/**/*.styl", ["style"]);
   gulp.watch("jade/**/*.jade", ["html"]);
   gulp.watch("*.html").on("change", server.reload);
 });
@@ -104,9 +104,9 @@ gulp.task("copy", function() {
 	], {
 		base: "."
 	})
-	.pipe(gulp.dest("build"))
+	.pipe(gulp.dest("dist"))
 });
 
 gulp.task("clean", function() {
-  return del("build");
+  return del("dist");
 });

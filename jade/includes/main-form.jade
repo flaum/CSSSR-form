@@ -1,6 +1,12 @@
 form.main-form(action="echo", method="post")
+
+	//- Блок с заголовком дело
+
 	.main-form__title-container
 		img(src="img/case.png", width="221", heigth="118", alt="Дело")
+		
+	//- Блок с персональной информацией
+		
 	.main-form__personal-info
 		label(for="full-name") Полное ФИО
 		input(type="text", name="full-name", id="full-name", value="Куцев Сергей Игоревич", placeholder="Иванов Иван Иванович", required)
@@ -9,26 +15,87 @@ form.main-form(action="echo", method="post")
 		label(for="location") Место жительства
 		input(type="text", name="location", id="location", value="г.Днепропетровск, Украина", placeholder="г. Иваново, Россия", required)
 		label(for="skype") Скайп
-		input(type="text", name="skype", id="skype", value="flaumsk", placeholder="ivanov", required)
+		input.main-form__personal-info-skype(type="text", name="skype", id="skype", value="flaumsk", placeholder="ivanov", required)
 		label(for="e-mail") Почта
 		input(type="e-mail", name="e-mail", id="e-mail", value="skflaum@gmail.com", placeholder="ivanov@gmail.com", required)
+	
+	//- Блок образования
+	
 	.main-form__education
-		span.main-form__education-text
-			| Выпускник
-			a(href="http://htmlacademy.ru") htmlacademy.ru
+		span.main-form__education-text Выпускник
+		a.main-form__htmlacademy-link(href="http://htmlacademy.ru") htmlacademy.ru
 		input(type="radio", name="education", id="education-yes", checked)
 		label(for="education-yes") Да
 		input(type="radio", name="education", id="education-no")
 		label(for="education-no") Нет
+		
+	//- Блок практических навыков	
+		
 	.main-form__practical-skils
-		h2.main-form__practical-skils-title Практические навыки
+		span.main-form__practical-skils-title Практические навыки
 		p.main-form__practical-skils-text 
-			| Отметьте тольео те технологии и типы задач, с которыми вы хорошо знакомы. Отсутствие опыта отнюдь не означает, что у
-			| вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыму гарантировано
+			| Отметьте только те технологии и типы задач,с которыми вы хорошо знакомы. Отсутствие опыта отнюдь не означает,что у
+			| вас меньше шансов стать нашим сотрудником. Это означает,что вы будете получать те задачи,с которыми гарантировано
 			| будете справлятся.
 		.main-form__practical-skils-items
 			input(type="checkbox", name="bem-methodology", id="bem-methodology", checked)
 			label.main-form__practical-skils-item(for="bem-methodology") Методология БЭМ
 			input(type="checkbox", name="jquery", id="jquery")
 			label.main-form__practical-skils-item(for="jquery") jQuery
+			input(type="checkbox", name="grunt", id="grunt")
+			label.main-form__practical-skils-item(for="grunt") Использую GRUNT
+			input(type="checkbox", name="haml", id="haml")
+			label.main-form__practical-skils-item(for="haml") HAML
+			input(type="checkbox", name="sass", id="sass", checked)
+			label.main-form__practical-skils-item(for="sass") SASS
+			input(type="checkbox", name="less", id="less", checked)
+			label.main-form__practical-skils-item(for="less") LESS
+			input(type="checkbox", name="coffeescript", id="coffeescript")
+			label.main-form__practical-skils-item(for="coffeescript") CoffeeScript 
+			input(type="checkbox", name="jade", id="jade", checked)
+			label.main-form__practical-skils-item(for="jade") Jade
+			input(type="checkbox", name="stylus", id="stylus", checked)
+			label.main-form__practical-skils-item(for="stylus") Stylus
+			input(type="checkbox", name="angular", id="angular")
+			label.main-form__practical-skils-item(for="angular") Знаю (изучаю) Angular 
+			input(type="checkbox", name="android", id="android")
+			label.main-form__practical-skils-item(for="android") Верстка под Android
+			input(type="checkbox", name="ios", id="ios")
+			label.main-form__practical-skils-item(for="ios") Верстка под iOS 
+			input(type="checkbox", name="windows", id="windows")
+			label.main-form__practical-skils-item(for="windows") Верстка под Windows Phone
+			input(type="checkbox", name="delivery", id="delivery")
+			label.main-form__practical-skils-item(for="delivery") Верстка рассылок
+			input(type="checkbox", name="adaptive", id="adaptive", checked)
+			label.main-form__practical-skils-item(for="adaptive") Адаптивная верстка
+			input(type="checkbox", name="dropbox", id="dropbox", checked)
+			label.main-form__practical-skils-item(for="dropbox") Использую Dropbox 
+			input(type="checkbox", name="gmail", id="gmail", checked)
+			label.main-form__practical-skils-item(for="gmail") Использую Gmail 
+			input(type="checkbox", name="github", id="github", checked)
+			label.main-form__practical-skils-item(for="github") Использую GitHub 
+			input(type="checkbox", name="gulp", id="gulp", checked)
+			label.main-form__practical-skils-item(for="gulp") Использую Gulp
+			
 				
+	//- Блок уровня JavaScript
+			
+	.main-form__js
+		span.main-form__js-title Уровень владения JavaScript
+		.main-form__js-scale-wrapper
+			input(type="radio", name="js", id="no-js")
+			input(type="radio", name="js", id="low-js", checked)
+			input(type="radio", name="js", id="mid-js")
+			input(type="radio", name="js", id="high-js")
+			.main-form__js-toggle
+			label.main-form__js-level(for="no-js") Не владею
+			label.main-form__js-level(for="low-js") Использую готовые решения
+			label.main-form__js-level(for="mid-js") 
+				span Использую готовые решения и умею их переделывать 
+			label.main-form__js-level(for="high-js") Пишу сложные скрипты
+					
+	//- Блок даты заполнения
+	
+	.main-form__date
+		span.main-form__date-title Дата заполнения
+		input(type="text", name="date", value="13.07.2014", placeholder="01.01.2014")
